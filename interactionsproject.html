@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+
+    <script>
+        var r, g, b;
+        
+
+        function setup() {
+            createCanvas(800, 600);
+            // these variables will for me to define the function with any value I want allowing for the colors to change
+            r = random(20, 50);
+            g = random(20, 75);
+            b = random(20, 125);
+        }
+
+        function draw() {
+
+
+        }
+        //the way this function works is when the mouse is moved the action will occur
+        function mouseMoved() {
+            stroke(0)//Will give me black
+            
+            background(255, 0, 255)//purple
+            fill(188, 188, 188);//gray
+
+            fill(0);
+            text("Have some Icecream", 100, 100)
+            textSize(50)
+            fill(219, 219, 219);
+            
+            stroke(255, 163, 204);
+            strokeWeight(random(15));//will change size of stroke as I move my mouse
+            
+            //these lines will connect the rectangles to the circle
+            line(mouseX, mouseY, mouseX - 100, mouseY);
+            line(mouseX, mouseY, mouseX, mouseY + 100);
+            line(mouseX, mouseY, mouseX, mouseY - 100);
+            line(mouseX, mouseY, mouseX + 100, mouseY);
+            
+            stroke(0);
+            strokeWeight(random(20));
+            
+            //thse four rectangles are what are connected to the lines
+            rect(mouseX - 40, mouseY + 90, 90, 20);//bottom rect
+            rect(mouseX - 110, mouseY - 25, 20, 50);//left rect
+            rect(mouseX - 40, mouseY - 110, 90, 20);//top rect
+            rect(mouseX + 90, mouseY - 25, 20, 50);//right rect
+            
+            ellipse(mouseX, mouseY, 70, 70);//center circle
+            fill(255, 25, 90);
+            stroke(255, 25, 90);
+            ellipse(mouseX + 10, mouseY, 20, 20);//eye
+
+
+        }
+        //when you hold down on your mouse and drag it these function will appear
+        function mouseDragged() {
+            
+            //this revert the stroke and stroke weight back to normal
+            stroke(0);
+            strokeWeight(10);
+            
+            fill(random(255), random(255), random(255));//will change the color each time the mouse is dragged
+            
+            background(0)//black
+            //creates robots leads and arms
+            rect(mouseX - 30, mouseY - 20, 30, 10)
+            rect(mouseX, mouseY, 30, 10)
+            rect(mouseX - 20, mouseY + 60, 40, 80)
+            rect(mouseX + 30, mouseY + 30, 80, 20)
+            rect(mouseX - 100, mouseY + 30, 80, 20)
+            
+            line(mouseX, mouseY, mouseX, mouseY + 140);//;ine beteen legs
+            
+            //head
+            ellipse(mouseX, mouseY + 40, 90, 70);
+            ellipse(mouseX, mouseY, 50, 70);
+            ellipse(mouseX, mouseY, 20, 20);
+            
+            //This will allow for words and sentances to appear on the canvas
+            text("I love Icecream", mouseX + 30, mouseY)
+            textSize(50)
+
+
+
+        }
+        //When any key is pressed this function will occur
+        function keyPressed() {
+            
+            background(r, g, b);//using the var from eariler to replace the the number placements
+            
+            stroke(random(255), random(255), random(255))//each time key is pressed stroke changes
+            
+            //ice cream
+            line(400, 400, 350, 300)//cone
+            line(400, 400, 450, 300)//cone
+            ellipse(400, 275, 100, 100)//icecream
+            
+            strokeWeight(10)
+            fill(r, g, b);
+            text("I love Icecream", mouseX + 50, mouseY)
+            textSize(50)
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/josephm7235/p5js/blob/gh-pages/interactions-project.html?footer=0"></script>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
