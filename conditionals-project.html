@@ -8,24 +8,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
 
     <script>
-       //Variables that are needed in order for this code to function properly they store the info needed
-        var x;//for x coordinate
-        var y;//for y coordinate
-        var w;//width
-        var h;//height
+        //Variables that are needed in order for this code to function properly they store the info needed
+        var x; //for x coordinate
+        var y; //for y coordinate
+        var w; //width
+        var h; //height
 
 
 
-      // S = pen up
-      // A = pen down
-      // D = change pen color
-      // F = makes pen bigger
-      // G = makes pen smaller
-      // W = clear
-      
+        // S = pen up
+        // A = pen down
+        // D = change pen color
+        // F = makes pen bigger
+        // G = makes pen smaller
+        // W = clear
+
         function setup() {
             createCanvas(600, 600);
-            
+
             //storing number required
             x = 300;
             y = 300;
@@ -41,9 +41,9 @@
         }
 
         function draw() {
-            
+
             //This is used to keep the circle moving for as long as that key is held
-            if (keyIsDown(LEFT_ARROW))//key is down used to keep circle moving
+            if (keyIsDown(LEFT_ARROW)) //key is down used to keep circle moving
                 x -= 5;
 
             if (keyIsDown(RIGHT_ARROW))
@@ -56,26 +56,26 @@
                 y += 5;
 
             ellipse(x, y, w, h)
-            
+
         }
         //When any key is pressed this function will occur
         function keyPressed() {
-            
+
             //When up arrow is pressed this if statement will occur
-            if (keyCode == UP_ARROW) {//goes up
+            if (keyCode == UP_ARROW) { //goes up
                 ellipse(x, y, w, h)
-                noStroke()//means that there will be no stroke when drawn
+                noStroke() //means that there will be no stroke when drawn
                 y -= 10;
 
             }
             //When down arrow is pressed this else if statement will occur
-            else if (keyCode == DOWN_ARROW) {//keyCode is used in order to have keys like down arrow function
+            else if (keyCode == DOWN_ARROW) { //keyCode is used in order to have keys like down arrow function
                 ellipse(x, y, w, h)
                 noStroke()
                 y += 10;
 
             }
-             //When right arrow is pressed this if statement will occur
+            //When right arrow is pressed this if statement will occur
             if (keyCode == RIGHT_ARROW) {
                 ellipse(x, y, w, h)
                 noStroke()
@@ -83,7 +83,7 @@
 
             }
             //When left arrow is pressed this else if statement will occur
-            else if (keyCode == LEFT_ARROW) {//goes to the left
+            else if (keyCode == LEFT_ARROW) { //goes to the left
                 ellipse(x, y, w, h)
                 noStroke()
                 x -= 10;
@@ -92,20 +92,20 @@
             //when s is pressed the pen will go up meaning nothing will be drawn
             if (key == "S") {
                 noStroke(0);
-                noFill(0);//same as no stroke but for inside of shape
+                noFill(0); //same as no stroke but for inside of shape
             }
             //enlarges the shape
             else if (key == "F") {
                 ellipse(x, y, w, h)
-                w += 20;//width increase by 20
-                h += 20;//height increase by 20
+                w += 20; //width increase by 20
+                h += 20; //height increase by 20
 
             }
             //shrinks the shape
             else if (key == "G") {
                 ellipse(x, y, w, h)
-                w -= 20;//width will decrease
-                h -= 20;//height will decrease
+                w -= 20; //width will decrease
+                h -= 20; //height will decrease
 
 
             }
@@ -132,6 +132,9 @@
 
 
             }
+            else {
+                return false;
+            }
         }
     </script>
 </head>
@@ -147,14 +150,7 @@
         $(window).bind("load", function() {
             $('#code').before($('#defaultCanvas0').remove());
         });
-        $(document).keydown(function(e) {
-  var key = e.which;
-  if($.inArray(key,ar) > -1) {
-    e.preventDefault();
-  }
-  return true;
-});
-    </script>
     
-</body>
+    </script>
 
+</body>
