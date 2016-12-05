@@ -22,8 +22,10 @@
       // F = makes pen bigger
       // G = makes pen smaller
       // W = clear
+      
         function setup() {
             createCanvas(600, 600);
+            
             //storing number required
             x = 300;
             y = 300;
@@ -39,6 +41,7 @@
         }
 
         function draw() {
+            
             //This is used to keep the circle moving for as long as that key is held
             if (keyIsDown(LEFT_ARROW))//key is down used to keep circle moving
                 x -= 5;
@@ -53,9 +56,11 @@
                 y += 5;
 
             ellipse(x, y, w, h)
+            
         }
         //When any key is pressed this function will occur
         function keyPressed() {
+            
             //When up arrow is pressed this if statement will occur
             if (keyCode == UP_ARROW) {//goes up
                 ellipse(x, y, w, h)
