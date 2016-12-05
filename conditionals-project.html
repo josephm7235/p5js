@@ -16,7 +16,12 @@
 
 
 
-
+      // S = pen up
+      // A = pen down
+      // D = change pen color
+      // F = makes pen bigger
+      // G = makes pen smaller
+      // W = clear
         function setup() {
             createCanvas(600, 600);
             //storing number required
@@ -27,6 +32,7 @@
 
             //color of orignal ellipse
             fill(200, 0, 0);
+            noStroke()
             ellipse(x, y, w, h);
 
 
